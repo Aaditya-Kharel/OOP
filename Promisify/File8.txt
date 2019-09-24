@@ -1,0 +1,514 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+  <title>Human Capital Development M.S. | The University of Southern Mississippi Gulf Coast</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="/gulfcoast/sites/all/themes/fusion/usm/favicon.ico" type="image/x-icon" />
+<meta name="description" content="2015-2016 Master of Science in Human Capital Development Degree PlanOverviewThe Master of Science in Human Capital Development emphasizes both a research and theory framework as well as the practical application of workplace learning and performance." />
+<meta name="keywords" content="development,human capital,Human Capital Development,human resource development,human resources,training,workforce" />
+<link rel="canonical" href="https://www.usm.edu/gulfcoast/human-capital-development/human-capital-development-ms" />
+<meta name="revisit-after" content="1 day" />
+  <link type="text/css" rel="stylesheet" media="all" href="https://www.usm.edu/gulfcoast/sites/usm.edu.gulfcoast/files/css/css_7b5836d8dc4597385f7e3db2708ba846.css" />
+<link type="text/css" rel="stylesheet" media="print" href="https://www.usm.edu/gulfcoast/sites/usm.edu.gulfcoast/files/css/css_76abd16ef02559672a21961dfedef55f.css" />
+  <link type="text/css" rel="stylesheet" media="all" href="/gulfcoast/sites/all/themes/fusion/fusion_core/css/grid16-960.css" />
+  <!--[if IE 8]>
+  <link type="text/css" rel="stylesheet" media="all" href="/gulfcoast/sites/all/themes/fusion/fusion_core/css/ie8-fixes.css" />
+<link type="text/css" rel="stylesheet" media="all" href="/gulfcoast/sites/all/themes/fusion/usm/css/ie8-fixes.css" />
+  <![endif]-->
+  <!--[if IE 7]>
+  <link type="text/css" rel="stylesheet" media="all" href="/gulfcoast/sites/all/themes/fusion/fusion_core/css/ie7-fixes.css" />
+<link type="text/css" rel="stylesheet" media="all" href="/gulfcoast/sites/all/themes/fusion/usm/css/ie7-fixes.css" />
+  <![endif]-->
+  <!--[if lte IE 6]>
+  <link type="text/css" rel="stylesheet" media="all" href="/gulfcoast/sites/all/themes/fusion/fusion_core/css/ie6-fixes.css" />
+<link type="text/css" rel="stylesheet" media="all" href="/gulfcoast/sites/all/themes/fusion/usm/css/ie6-fixes.css" />
+  <![endif]-->
+  <script>
+  	var curvyCornersVerbose = 0;	
+  </script>
+    <script type="text/javascript" src="https://www.usm.edu/gulfcoast/sites/usm.edu.gulfcoast/files/js/js_2ac0d75cc0d8d13bba06e4b7379125da.js"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/gulfcoast\/","dhtmlMenu":{"slide":"slide","siblings":"siblings","relativity":"relativity","children":0,"clone":0,"doubleclick":0},"lightbox2":{"rtl":0,"file_path":"\/gulfcoast\/(\\w\\w\/)sites\/usm.edu.gulfcoast\/files","default_image":"\/gulfcoast\/sites\/all\/modules\/lightbox2\/images\/brokenimage.jpg","border_size":10,"font_color":"000","box_color":"fff","top_position":"","overlay_opacity":"0.8","overlay_color":"000","disable_close_click":1,"resize_sequence":0,"resize_speed":400,"fade_in_speed":400,"slide_down_speed":600,"use_alt_layout":0,"disable_resize":0,"disable_zoom":0,"force_show_nav":0,"show_caption":1,"loop_items":0,"node_link_text":"","node_link_target":0,"image_count":"Image !current of !total","video_count":"Video !current of !total","page_count":"Page !current of !total","lite_press_x_close":"press \u003ca href=\"#\" onclick=\"hideLightbox(); return FALSE;\"\u003e\u003ckbd\u003ex\u003c\/kbd\u003e\u003c\/a\u003e to close","download_link_text":"","enable_login":false,"enable_contact":false,"keys_close":"c x 27","keys_previous":"p 37","keys_next":"n 39","keys_zoom":"z","keys_play_pause":"32","display_image_size":"original","image_node_sizes":"(\\.thumbnail)","trigger_lightbox_classes":"img.inline","trigger_lightbox_group_classes":"img.thumbnail, img.image-thumbnail","trigger_slideshow_classes":"","trigger_lightframe_classes":"","trigger_lightframe_group_classes":"","custom_class_handler":0,"custom_trigger_classes":"","disable_for_gallery_lists":1,"disable_for_acidfree_gallery_lists":true,"enable_acidfree_videos":true,"slideshow_interval":10000,"slideshow_automatic_start":1,"slideshow_automatic_exit":1,"show_play_pause":1,"pause_on_next_click":1,"pause_on_previous_click":1,"loop_slides":0,"iframe_width":600,"iframe_height":400,"iframe_border":1,"enable_video":0},"googleanalytics":{"trackOutbound":1,"trackMailto":1,"trackDownload":1,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip"},"CToolsUrlIsAjaxTrusted":{"https:\/\/apps.usm.edu\/searchgc\/":true},"og":{"group_context":{"nid":"19673","title":"Department of Human Capital Development","type":"academic_department"}}});
+//--><!]]>
+</script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","/gulfcoast/sites/usm.edu.gulfcoast/files/googleanalytics/analytics.js?C","ga");ga("create", "UA-516385-1", {"cookieDomain":"auto"});ga("set", "anonymizeIp", true);ga("send", "pageview");
+//--><!]]>
+</script>
+<link href="https://plus.google.com/117852237218680882203" rel="publisher" />
+<meta name="p:domain_verify" content="679e7a42d6dace73232b8727fb5bdc99" />
+<meta name="viewport" content="width=device-width" />
+</head>
+<body id="" class="not-front not-logged-in page-node node-type-page no-sidebars og-context og-context-19673 full-node layout-first-main sidebars-split font-size-12 grid-type-960 grid-width-16 full-node layout-first-main sidebars-split font-size-12 grid-type-960 grid-width-16 human-capital-development human-capital-development-ms">
+	<!-- body -->
+  <div id="page" class="page">
+    <div id="page-inner" class="page-inner">  
+		<div id="skip">
+        <a href="#main-content-area">Skip to Main Content Area</a>
+      </div>
+      <!-- header-top row: width = grid_width -->
+            <!-- header-group row: width = grid_width -->
+      <div id="header-group-wrapper" class="header-group-wrapper full-width">
+        <div id="header-group" class="header-group row grid16-16">
+          <div id="header-group-inner" class="header-group-inner inner clearfix">
+                        <div id="search-box" class="search-box block">
+<div id="search-box-inner" class="search-box-inner inner clearfix">
+<form action="https://apps.usm.edu/searchgc/"  accept-charset="UTF-8" method="get" id="search-theme-form">
+<div><script>
+
+$(document).ready(function(){
+
+	$("ul.subnav").parent().append("<span></span>"); //Only shows drop down trigger when js is enabled (Adds empty span tag after ul.subnav*)
+
+	$("ul.topnav li.last").click(function() { //When trigger is clicked...
+
+		//Following events are applied to the subnav itself (moving subnav up and down)
+		$(this).parent().find("ul.subnav").slideDown('fast').show(); //Drop down the subnav on click
+
+		$(this).parent().hover(function() {
+		}, function(){
+			$(this).parent().find("ul.subnav").slideUp('slow'); //When the mouse hovers out of the subnav, move it back up
+		});
+
+		//Following events are applied to the trigger (Hover events for the trigger)
+		}).hover(function() {
+			$(this).addClass("subhover"); //On hover over, add class "subhover"
+		}, function(){	//On Hover Out
+			$(this).removeClass("subhover"); //On hover out, remove class "subhover"
+	});
+
+});
+
+</script>
+
+<div id="searchBox">
+				<ul class="topnav">
+					 <li class="first"><a aria-label="A to Z Site Directory" href="http://www.usm.edu/gulfcoast/z-index">A-Z</a></li>
+					<li><a aria-label="Event Calendar" href="http://www.usm.edu/calendar?category=All&location=498&search="target="_blank">Events</a></li>
+					 <li><a aria-label="Campus Map" href="http://www.usm.edu/gulfcoast/about/campus-map">Map</a></li>
+					 <li><a aria-label="People Directory" href="http://apps.usm.edu/itech/onlinedirectory/">People</a></li>
+					<li class="last" aria-haspopup="true"><a href="#">Quick Links</a>
+					<ul class="subnav" style="display:none;">
+                         <li><a href="http://www.southernmissalumni.com">Alumni & Friends</a></li>
+                         <li><a href="https://usm.instructure.com/login/canvas">Canvas Log-In</a></li>
+						 <li><a href="https://www.usm.edu/gulfcoast/usm-cares">CARES</a></li>
+                         <li><a href="http://www.usm.edu/gulfcoast/students">Current Students</a></li>
+						 <li><a href="http://www.usm.edu/gulfcoast/faculty-staff">Faculty & Staff</a></li>
+                         <li><a href="http://choose.usm.edu/">Future Students</a></li>
+                         <li><a href="https://soar.usm.edu">SOAR</a></li>
+                         <li><a href="https://www.outlook.com/usm.edu">Student Email</a></li>
+						 <li><a href="https://www.usm.edu/gulfcoast/health-center/services-we-offer">Student Counseling</a></li>
+                         <li><a href="http://www.usm.edu/gulfcoast/vice-president-gulf-park-campus/staff/steve-miller-phd-vice-president-gulf-park-campus">Vice President</a></li>
+                         <li><a href="http://www.lib.usm.edu/gulfcoast.html">University Libraries</a></li>
+                         <li><a href="http://www.usm.edu/gulfcoast/about-southern-miss-gulf-coast">Visitors</a></li>
+                    </ul>
+									
+					</li>
+				</ul>
+				<div id="search">
+						<input type="text" size="10px" maxlength="128" name="q" id="edit-search-theme-form-1" class="searchbox" title="Enter the terms you wish to search for." value="Search" onblur="if(this.value=='') this.value='Search';" onfocus="if(this.value=='Search') this.value='';"/> <span></span><input type="image" class="searchbox_submit" alt="search" src="/gulfcoast/sites/usm.edu.gulfcoast/themes/gulfcoast/imgs/searchButton.png" name=""/>
+
+				</div>
+
+	<div id="threeLinks">
+		<a href="https://home.usm.edu/admissions/apply-southern-miss?utm_source=top-nav-apply&amp;utm_medium=www-gc&amp;utm_campaign=admissions" title="Apply for Admission to Southern Miss"><img src="/sites/gulfcoast/themes/gulfcoast/imgs/gcapply.png" alt="Apply for Admission to Southern Miss" class="gcapply-button"></a>
+		<a href="https://home.usm.edu/admissions/visit-southern-miss?utm_source=top-nav-visit&amp;utm_medium=www-gc&amp;utm_campaign=admissions" title="Campus Visit Info for Undergrad and Grad Students"><img src="/sites/gulfcoast/themes/gulfcoast/imgs/gcscheduleavisit.png" alt="Campus Visit Info for Undergrad and Grad Students" class="gcvisit-button"></a>
+		<a href="https://usouthernmiss.hobsonsradius.com/ssc/iform/M08672B0700kx6700kzKIF.ssc" title="Request Information for Prospective Students" onclick="ga('send','event','Action_Links','click','Request Information Top Nav', 200,{'nonInteraction': 0});"><img alt="Request Information for Prospective Students" src="/sites/gulfcoast/themes/gulfcoast/imgs/gcrequestmoreinfo.png" class="gcrequest-button"></a>
+	</div>
+
+</div>
+
+
+
+</div></form>
+</div><!-- /search-box-inner -->
+</div><!-- /search-box -->
+                        <div id="header-site-info" class="header-site-info block">
+              <div id="header-site-info-inner" class="header-site-info-inner inner">
+                                <div id="logo">
+                                <a href="/gulfcoast/" title="Home">
+                                  
+                  <!-- + -->
+                                    </a>
+                </div>
+                                              </div><!-- /header-site-info-inner -->
+            </div><!-- /header-site-info -->
+            
+            			        
+          </div><!-- /header-group-inner -->
+        </div><!-- /header-group -->
+      </div><!-- /header-group-wrapper -->
+
+    
+
+      <!-- main row: width = grid_width -->
+      <div id="main-wrapper" class="main-wrapper full-width">
+	    
+        <div id="main" class="main row grid16-16">
+          <div id="main-inner" class="main-inner inner clearfix">
+		    <div id="primary-menu" class="primary-menu block">
+<div id="primary-menu-inner" class="primary-menu-inner inner clearfix">
+<ul class="menu"><li class="menu-26952 first"><a href="/gulfcoast/about" title="About">About</a></li>
+<li class="menu-26954"><a href="/gulfcoast/academics" title="Academics">Academics</a></li>
+<li class="menu-26851"><a href="https://home.usm.edu/admissions" title="Admissions">Admissions</a></li>
+<li class="menu-37885"><a href="/gulfcoast/community" title="Community">Community</a></li>
+<li class="menu-20080"><a href="http://www.usm.edu/news/articles/Gulf%20Coast" title="">News</a></li>
+<li class="menu-26842"><a href="https://home.usm.edu/research" title="This page describes the scope of research conducted by The University of Southern Mississippi, including the major research centers on the Mississippi Gulf Coast.">Research</a></li>
+<li class="menu-27180 last"><a href="/gulfcoast/student-life" title="Student Life">Student Life</a></li>
+</ul></div><!-- /primary-menu-inner -->
+</div><!-- /primary-menu -->
+			  <!-- preface-top row: width = grid_width -->
+      <div id="preface-top-wrapper" class="preface-top-wrapper full-width">
+<div id="preface-top" class="preface-top row grid16-16">
+<div id="preface-top-inner" class="preface-top-inner inner clearfix">
+  <!--1 + --><!-- block.tpl.php in gulfcoast -->
+<div id="block-usm_misc-0" class="block 0  block-usm_misc odd first last grid16-16">
+  <div class="inner clearfix">
+        
+         
+        
+      		<h3 class="title block-title"></h3>
+           
+        
+    <div class="content">
+
+	
+
+      <a class="customTopLink" href="https://www.usm.edu/gulfcoast/department-human-capital-development">Department of Human Capital Development</a>      
+	      
+      
+    </div>
+  </div><!-- /block-inner -->
+</div><!-- /block -->
+
+
+</div><!-- /preface-top-inner -->
+</div><!-- /preface-top -->
+</div><!-- /preface-top-wrapper -->
+	  <div class="innermain clearfix">
+            <div id="sidebar-first" class="sidebar-first row nested grid16-4">
+<div id="sidebar-first-inner" class="sidebar-first-inner inner clearfix">
+  <!--1 + --><!-- block.tpl.php in gulfcoast -->
+<div id="block-og_menu-0" class="block 0 human-capital-development block-og_menu odd first  grid16-4">
+  <div class="inner clearfix">
+        
+        
+    <div class="content">
+
+	
+
+      <ul class="menu"><li class="leaf first dhtml-menu "><a href="/gulfcoast/human-capital-development/applied-technology-bs" title="Information about the Applied Technology, B.S." id="dhtml_menu-31085">Applied Technology, B.S.</a></li>
+<li class="expanded  dhtml-menu  active-trail"><a href="/gulfcoast/human-capital-development/about" title="Overview
+The Master of Science in Human Capital Development emphasizes both a research and theory framework as well as the practical application of workplace learning and performance. The goal of the program is to prepare students to improve human performance, balance individual and organizational needs, build knowledge capital within the organization, and determine the return on investment of performance improvement programs. Students learn to think strategically to design and develop interventions that will positively impact workplace learning and performance.
+
+The Master of Science in Human Capital Development is offered in Executive and Fully Online formats." id="dhtml_menu-30527">Human Capital Development, M.S.</a><ul class="menu"><li class="expanded first dhtml-menu  active-trail"><a href="/gulfcoast/human-capital-development/human-capital-development-ms" title="About the Workforce Training and Development, M.S." id="dhtml_menu-30529" class="active">About</a><ul class="menu"><li class="leaf first dhtml-menu "><a href="/gulfcoast/department-human-capital-development/mshcd-executive-format" title="Executive Format Master&#039;s Degree" id="dhtml_menu-44231">Executive Format</a></li>
+<li class="leaf last dhtml-menu "><a href="/gulfcoast/department-human-capital-development/mshcd-fully-online" title="Fully Online Master&#039;s Degree" id="dhtml_menu-44236">Fully Online</a></li>
+</ul></li>
+<li class="leaf  dhtml-menu "><a href="http://apps.usm.edu/graduate-school/grad-school-apps/?utm_source=top-nav&amp;utm_medium=web&amp;utm_content=grad-apply&amp;utm_campaign=admi" title="Apply Now" id="dhtml_menu-31113">Apply Now</a></li>
+<li class="leaf  dhtml-menu "><a href="/gulfcoast/human-capital-development/human-capital-development-ms-curriculum-courses" title="Curriculum and Courses for the Workforce Training and Development, M.S." id="dhtml_menu-30531">Curriculum and Courses</a></li>
+<li class="leaf last dhtml-menu "><a href="/gulfcoast/human-capital-development/submit-your-bio-current-students-and-alumni" title="Current students and alumni submit your bio." id="dhtml_menu-30537">Submit Your Bio (Current Students and Alumni)</a></li>
+</ul></li>
+<li class="expanded  dhtml-menu  collapsed start-collapsed "><a href="/gulfcoast/human-capital-development/human-capital-development-phd" title="About the Human Capital Development, Ph.D." id="dhtml_menu-30539">Human Capital Development, Ph.D.</a><ul class="menu"><li class="leaf first dhtml-menu "><a href="/gulfcoast/human-capital-development/human-capital-development-phd" title="About the Human Capital Development Ph.D." id="dhtml_menu-30543">About</a></li>
+<li class="leaf  dhtml-menu "><a href="http://apps.usm.edu/graduate-school/grad-school-apps/?utm_source=top-nav&amp;utm_medium=web&amp;utm_content=grad-apply&amp;utm_campaign=admi" title="Apply Now" id="dhtml_menu-31115">Apply Now</a></li>
+<li class="leaf  dhtml-menu "><a href="/gulfcoast/human-capital-development/human-capital-development-phd-curriculum-courses" title="Curriculum and Courses for the Human Capital Development, Ph.D." id="dhtml_menu-30541">Curriculum and Courses</a></li>
+<li class="leaf last dhtml-menu "><a href="/gulfcoast/human-capital-development/submit-your-bio-current-students-and-alumni" title="Current students and alumni submit your bio here." id="dhtml_menu-30549">Submit Your Bio (Current Students and Alumni)</a></li>
+</ul></li>
+<li class="leaf  dhtml-menu "><a href="http://choose.usm.edu/pageFull.php?id=327991&amp;utm_source=top-nav&amp;utm_medium=web&amp;utm_content=ugrad-apply&amp;utm_campaign=admissions" title="Apply Now for DHCD BS" id="dhtml_menu-44306">Apply Now - Undergraduate Application</a></li>
+<li class="leaf  dhtml-menu "><a href="http://apps.usm.edu/graduate-school/grad-school-apps/?utm_source=top-nav&amp;utm_medium=web&amp;utm_content=grad-apply&amp;utm_campaign=admi" title="Apply Now using the Graduate School Application" id="dhtml_menu-31117">Apply Now- Graduate School Application</a></li>
+<li class="leaf  dhtml-menu "><a href="/gulfcoast/department-human-capital-development/course-schedule" title="" id="dhtml_menu-31145">Course Schedule</a></li>
+<li class="leaf  dhtml-menu "><a href="/gulfcoast/department-human-capital-development/tuition-and-fees" title="" id="dhtml_menu-31147">Tuition and Fees</a></li>
+<li class="expanded  dhtml-menu  collapsed start-collapsed "><a href="/gulfcoast/current-hcd-students-and-alumni" title="Current HCD Students and Alumni" id="dhtml_menu-37863">Current HCD Students, Alumni</a><ul class="menu"><li class="leaf first dhtml-menu "><a href="/gulfcoast/department-human-capital-development/awards-and-recognitions" title="Awards and Recognitions" id="dhtml_menu-38380">Awards and Recognitions</a></li>
+<li class="leaf  dhtml-menu "><a href="/gulfcoast/department-human-capital-development/current-students-and-alumni" title="" id="dhtml_menu-32035">Current Students and Alumni</a></li>
+<li class="leaf  dhtml-menu "><a href="/gulfcoast/department-human-capital-development/resources-students" title="Resources for Students" id="dhtml_menu-44421">Resources for Students</a></li>
+<li class="leaf  dhtml-menu "><a href="/gulfcoast/department-human-capital-development/hcd-dissertations" title="Human Capital Development Dissertations" id="dhtml_menu-37867">HCD Dissertations</a></li>
+<li class="leaf last dhtml-menu "><a href="/gulfcoast/human-capital-development/student-alumni-news" title="Links to Student and Alumni Newsletter" id="dhtml_menu-30599">Kudos:  Student &amp; Alumni News</a></li>
+</ul></li>
+<li class="leaf  dhtml-menu "><a href="http://www.usm.edu/gulfcoast/department-human-capital-development/gallery/photo-gallery" title="" id="dhtml_menu-31289">Photo Gallery</a></li>
+<li class="expanded  dhtml-menu  collapsed start-collapsed "><a href="/gulfcoast/human-capital-development/jack-and-patti-phillips-workplace-learning-and-performance-institute-wlpi" title="Info about the WLPI" id="dhtml_menu-30553">Jack and Patti Phillips Workplace Learning and Performance Institute (WLPI)</a><ul class="menu"><li class="leaf first dhtml-menu "><a href="/gulfcoast/human-capital-development/about-0" title="About the WLPI" id="dhtml_menu-30555">About</a></li>
+<li class="expanded  dhtml-menu  collapsed start-collapsed "><a href="/gulfcoast/human-capital-development/training-and-development-certificate-program" title="About the TDCP" id="dhtml_menu-30561">HCD Professional Development Series</a><ul class="menu"><li class="leaf first dhtml-menu "><a href="/gulfcoast/human-capital-development/training-and-development-certificate-program" title="General Information about the Training and Development Certificate Program" id="dhtml_menu-30563">General Information</a></li>
+<li class="leaf  dhtml-menu "><a href="/gulfcoast/human-capital-development/participating-organizations-training-and-development-certificate-program" title="Participating Organizations in TDCP" id="dhtml_menu-30565">Participating Organizations</a></li>
+<li class="leaf  dhtml-menu "><a href="/gulfcoast/human-capital-development/topics-and-objectives-training-and-development-certificate-program" title="Topics and Objectives of TDCP" id="dhtml_menu-30567">Topics and Objectives</a></li>
+<li class="leaf  dhtml-menu "><a href="/gulfcoast/human-capital-development/facilitators-training-and-development-certificate-program" title="Facilitators in TDCP" id="dhtml_menu-30569">Facilitators</a></li>
+<li class="leaf last dhtml-menu "><a href="/gulfcoast/department-human-capital-development/gallery/training-and-development-certificate-program-photo" title="" id="dhtml_menu-31173">Photo Gallery</a></li>
+</ul></li>
+<li class="expanded last dhtml-menu  collapsed start-collapsed "><a href="/gulfcoast/human-capital-development/jack-and-patti-phillips" title="About Jack and Patti Phillips" id="dhtml_menu-30557">Jack and Patti Phillips</a><ul class="menu"><li class="leaf first dhtml-menu "><a href="/gulfcoast/human-capital-development/jack-and-patti-phillips-0" title="Bios of Jack and Patti Phillips" id="dhtml_menu-31083">Jack and Patti Phillips</a></li>
+<li class="leaf last dhtml-menu "><a href="/gulfcoast/human-capital-development/roi-institute" title="About the ROI Institute" id="dhtml_menu-30559">ROI Institute</a></li>
+</ul></li>
+</ul></li>
+<li class="expanded  dhtml-menu  collapsed start-collapsed "><a href="/gulfcoast/department-human-capital-development/funded-research" title="" id="dhtml_menu-31103">Grant Research</a><ul class="menu"><li class="leaf first dhtml-menu "><a href="/gulfcoast/department-human-capital-development/funded-research" title="Funded Research listing in HTML format" id="dhtml_menu-33160">Funded Research [HTML]</a></li>
+<li class="leaf last dhtml-menu "><a href="https://www.usm.edu/gulfcoast/sites/usm.edu.gulfcoast/files/groups/department-human-capital-development/pdf/funded.pdf" title="Funded Research listing in PDF format" id="dhtml_menu-33158">Funded Research [PDF]</a></li>
+</ul></li>
+<li class="leaf last dhtml-menu "><a href="/gulfcoast/human-capital-development/faculty-staff" title="Information on Faculty and Staff" id="dhtml_menu-30551">Faculty and Staff</a></li>
+</ul>      
+	      
+      
+    </div>
+  </div><!-- /block-inner -->
+</div><!-- /block -->
+
+
+  <!--2 + --><!-- block.tpl.php in gulfcoast -->
+<div id="block-views-contact_information-block_3" class="block contact_information-block_3  block-views even   grid16-4">
+  <div class="inner clearfix">
+        
+        
+    <div class="content">
+
+	
+
+      <div class="view view-contact-information view-id-contact_information view-display-id-block_3 view-dom-id-2">
+    
+  
+  
+      <div class="view-content">
+        <ul class="nobullet">
+    <div class="first last odd">
+        
+  <div class="views-field-title">
+                <span class="field-content"><h3>Contact Information</h3> </span>
+  </div>
+  
+  <div class="views-field-field-link-url-url">
+                <span class="field-content"></span>
+  </div>
+  
+  <div class="views-field-field-contact-building-value">
+                <span class="field-content">Department of Human Capital Development</span>
+  </div>
+  
+  <div class="views-field-field-contact-address-value">
+                <span class="field-content">138 Beach Park Place</span>
+  </div>
+  
+  <div class="views-field-field-contact-citystzip-value">
+                <span class="field-content">Long Beach, MS 39560</span>
+  </div>
+  
+  <div class="views-field-field-contact-phone-value">
+                <span class="field-content">Phone: 228.214.3517</span>
+  </div>
+  
+  <div class="views-field-field-contact-email-email">
+                <span class="field-content"><a href="/gulfcoast/email/16548/field_contact_email">Contact Form</a></span>
+  </div>
+  
+  <div class="views-field-nothing">
+                <span class="field-content"><a target="_blank" href="https://www.usm.edu/gulfcoast/about/campus-map"><img class="noborder" alt="Find it on the map" src="http://www.usm.edu/media/uc/images/building_map.png" /></a></span>
+  </div>
+    </div>
+    </ul>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>       
+	      
+      
+    </div>
+  </div><!-- /block-inner -->
+</div><!-- /block -->
+
+
+  <!--3 + --><!-- block.tpl.php in gulfcoast -->
+<div id="block-usm_custom-usm_custom_left_sidebar" class="block usm_custom_left_sidebar  block-usm_custom odd  last  grid16-4">
+  <div class="inner clearfix">
+        
+        
+    <div class="content">
+
+	
+
+      <div class="view view-Section-Promo-Blocks view-id-Section_Promo_Blocks view-display-id-block_11 htmlBlock view-dom-id-3">
+    
+  
+  
+      <div class="view-content">
+          <div class="first last odd">
+        
+  <div class="views-field-field-block-display-title-value">
+                <span class="field-content"><h3 class="block-title">Social Media</h3> </span>
+  </div>
+  
+  <div class="views-field-field-html-block-content-value">
+                <div class="field-content"> <p><a href="https://www.facebook.com/USMWLPI"><img class="noborder" style="float: left; border-style: none; padding: 0px 0px 10px 7px;" src="/sites/all/themes/fusion/usm/imgs/facebook.jpg" alt="Facebook icon" /></a><a href="http://linkedin.com/groups/Dept-Human-Capital-Development-Phillips-5010458?trk=myg_ugrp_ovr"><img class="noborder" style="float: left; border-style: none; padding: 0px 0px 10px 7px;" src="/sites/all/themes/fusion/usm/imgs/linkedin.jpg" alt="LinkedIn icon" /></a><a href="http://twitter.com/USMwlpi"><img class="noborder" style="float: left; border-style: none; padding: 0px 0px 10px 7px;" src="/sites/all/themes/fusion/usm/imgs/twitter.jpg" alt="Twitter icon" /></a></p><div style="clear: both;">&nbsp;</div>   </div>
+  </div>
+    </div>
+      </div>
+  
+  
+  
+  
+  
+  
+</div>       
+	      
+      
+    </div>
+  </div><!-- /block-inner -->
+</div><!-- /block -->
+
+
+</div><!-- /sidebar-first-inner -->
+</div><!-- /sidebar-first -->
+            <!-- main group: width = grid_width - sidebar_first_width -->
+            <div id="main-group" class="main-group row nested grid16-12">
+              <div id="main-group-inner" class="main-group-inner inner">
+                                <div id="main-content" class="main-content row nested">
+                  <div id="main-content-inner" class="main-content-inner inner">
+                    <!-- content group: width = grid_width - (sidebar_first_width + sidebar_last_width) -->
+                    <div id="content-group" class="content-group row nested grid16-12">
+                      <div id="content-group-inner" class="content-group-inner inner">
+                                                                        <div id="content-region" class="content-region row nested">
+                          <div id="content-region-inner" class="content-region-inner inner">
+                            <a name="main-content-area" id="main-content-area"></a>
+                                                        <div id="content-inner" class="content-inner block">
+                              <div id="content-inner-inner" class="content-inner-inner inner">
+                               <!-- // Print Only Banner Img  ///// -->
+                              <div id="prntImg" style="display:none;">
+                                    <img src="/gulfcoast/sites/all/themes/fusion/usm/imgs/printBanner.jpg" alt="The University of Southern Mississippi" />
+                                </div>
+                              <!-- //////////////////////////////// -->
+                              
+                                                                <div id="content-content" class="content-content">
+								                                  <h1 class="title">
+                                Human Capital Development M.S.                                </h1>
+                                                                
+                                                                
+                                  <div id="node-19845" class="node odd full-node node-type-page">
+  <div class="inner">
+    
+    
+    
+    
+
+    <div class="content clearfix">
+	
+      <div id="view-id-page_video-default" class="view view-page-video view-id-page_video view-display-id-default view-dom-id-1 ">
+    <div class="inner content">
+    
+    
+    
+          <div class="view-content">
+          <div class="views-row views-row-1 views-row-odd views-row-first views-row-last">
+      
+  <div class="views-field-field-video-source-embed">
+                <span class="field-content"></span>
+  </div>
+  </div>
+      </div>
+    
+    
+    
+    
+    
+      </div><!-- /views-inner -->
+</div>  <table style="background-color: #f7f7f7; width: 640px;" border="0" cellspacing="5" cellpadding="5"><tbody><tr><td><p style="text-align: left;"><a href="http://catalog.usm.edu/preview_program.php?catoid=13&amp;poid=6419">2015-2016 Master of Science in Human Capital Development Degree Plan</a></p><p style="text-align: left;"><strong>Overview</strong><br />The Master of Science in Human Capital Development emphasizes both a research and theory framework as well as the practical application of workplace learning and performance. The goal of the program is to prepare students to improve human performance, balance individual and organizational needs, build knowledge capital within the organization, and determine the return on investment of performance improvement programs. Students learn to think strategically to design and develop interventions that will positively impact workplace learning and performance.</p><p style="text-align: left;">The fully online courses are delivered in 8-week blocks.</p><p style="text-align: left;"><img class="bodycontent" title="MSHCD ONLINE Matrix" src="/gulfcoast/sites/usm.edu.gulfcoast/files/groups/department-human-capital-development/images/37576.jpg" alt="MSHCD ONLINE Matrix" width="640" height="110" /></p><p style="text-align: left;">&nbsp;</p><p style="text-align: left;"><strong><img class="imagecache-sidebar_image" style="border-style: none;" src="https://www.usm.edu/sites/default/files/imagecache/sidebar_image/groups/center-military-veterans-service-members-and-families/images/2016mfslogo-190x190px.png" alt="Military Friendly Designation for 2016" width="144" height="144" /><img class="imagecache-sidebar_image" style="border-style: none;" src="https://www.usm.edu/sites/default/files/imagecache/sidebar_image/groups/center-military-veterans-service-members-and-families/images/mae-2016-190x190px.png" alt="MAE Top College Designation - 2016" width="141" height="141" /><img class="imagecache-sidebar_image" style="border-style: none;" src="https://www.usm.edu/sites/default/files/imagecache/sidebar_image/groups/center-military-veterans-service-members-and-families/images/127571.png" alt="Military Order Purple Heart" width="137" height="156" /><br style="font-size: 11.0pt; font-family: 'Calibri',sans-serif;" /></strong></p><h3 style="text-align: justify;">Interested in learning more? Tell us about <a href="/gulfcoast/department-human-capital-development/want-more-information-about-mshcd">yourself</a>.</h3></td></tr></tbody></table>     </div>
+  </div><!-- /inner -->
+
+    
+
+  </div><!-- /node-19845 -->            
+                                                                  </div><!-- /content-content -->
+                                                              </div><!-- /content-inner-inner -->
+                            </div><!-- /content-inner -->
+                          </div><!-- /content-region-inner -->
+                        </div><!-- /content-region -->
+                                              </div><!-- /content-group-inner -->
+                    </div><!-- /content-group -->
+                                      </div><!-- /main-content-inner -->
+                </div><!-- /main-content -->
+                              </div><!-- /main-group-inner -->
+            </div><!-- /main-group -->
+			<div class="clear-both"></div>
+			 </div><!-- /innermain ends-->
+          </div><!-- /main-inner -->
+        </div><!-- /main -->
+		  		<div class="rounded-corner"></div>
+		        </div><!-- /main-wrapper -->
+      <!-- postscript-bottom row: width = grid_width -->
+            <!-- footer row: width = grid_width -->
+      <div id="footer-wrapper" class="footer-wrapper full-width">
+<div id="footer" class="footer row grid16-16">
+<div id="footer-inner" class="footer-inner inner clearfix">
+  <!--1 + --><!-- block.tpl.php in gulfcoast -->
+<div id="block-menu-menu-footer" class="block menu-footer footer block-menu odd first grid16-13">
+  <div class="inner clearfix">
+        
+        
+    <div class="content">
+
+	
+
+      <ul class="menu"><li class="leaf first no-dhtml "><a href="/gulfcoast/contact" title="" id="dhtml_menu-9639">Contact</a></li>
+<li class="leaf  no-dhtml "><a href="http://www.usm.edu/employment-hr" title="" id="dhtml_menu-27862">Employment &amp; HR</a></li>
+<li class="leaf  no-dhtml "><a href="https://secure.ethicspoint.com/domain/media/en/gui/31502/index.html" title="" id="dhtml_menu-27863">Ethics Line</a></li>
+<li class="leaf  no-dhtml "><a href="http://www.usmfoundation.com" title="" id="dhtml_menu-12517">Giving</a></li>
+<li class="leaf  no-dhtml "><a href="https://www.usm.edu/sexual-misconduct" title="Title IX information" id="dhtml_menu-44791">Sexual Assault/Title IX</a></li>
+<li class="leaf last no-dhtml "><a href="https://home.usm.edu/web-accessibility-statement" title="Web Accessibility statement" id="dhtml_menu-44796">Web Accessibility</a></li>
+</ul>      
+	      
+      
+    </div>
+  </div><!-- /block-inner -->
+</div><!-- /block -->
+
+
+  <!--2 + --><!-- block.tpl.php in gulfcoast -->
+<div id="block-block-1" class="block 1  block-block even  grid16-3 fusion-right fusion-center-content">
+  <div class="inner clearfix">
+        
+        
+    <div class="content">
+
+	
+
+      <div class="footer-icons"><a title="Southern Miss Gulf Park on Facebook"  aria-label="Southern Miss Gulf Park on Facebook" class="icon_fb" href="https://www.facebook.com/usmgulfpark">&nbsp;</a><a title="Southern Miss Gulf Park on Twitter"  aria-label="Southern Miss Gulf Park on Twitter" class="icon_twitter" href="https://twitter.com/USMGulfPark">&nbsp;</a><a title="Southern Miss on YouTube" aria-label="Southern Miss on YouTube" class="icon_youtube" href="https://www.youtube.com/southernmiss">&nbsp;</a><a class="icon_rss" title="Southern Miss Gulf Park on Instagram" aria-label="Southern Miss Gulf Park on Instagram" class="icon_rss" href="https://www.instagram.com/usmgulfpark">&nbsp;</a></div>      
+	      
+      
+    </div>
+  </div><!-- /block-inner -->
+</div><!-- /block -->
+
+
+  <!--3 + --><!-- block.tpl.php in gulfcoast -->
+<div id="block-block-2" class="block 2  block-block odd  last grid16-16">
+  <div class="inner clearfix">
+        
+         
+        
+      		<h3 class="title block-title"></h3>
+           
+        
+    <div class="content">
+
+	
+
+      <div class="footer-copyright"><p>The University of Southern Mississippi | 730 East Beach Boulevard, Long Beach, MS 39560 | 228.865.4500 | AA/EOE/ADAI</p><p>© 1995 - 2017 The University of Southern Mississippi. All rights reserved.</p><p style="text-align: center;"><a href="http://www.mississippi.edu/transparency" target="_blank"><img style="display: block; margin-left: auto; margin-right: auto;" src="http://www.mississippi.edu/transparency/images/ms-spending-transparency-60.png" alt="Mississippi Public Universities Accountability and Transparency" /></a><a href="http://www.usm.edu/about/accreditation">Accreditation</a> | <a href="http://www.mississippi.edu/gov/miss_code_ann_25-61-19.asp">Legislative Updates</a> | <a href="https://www.usm.edu/about/privacy">Privacy &amp; Legal</a></p></div>      
+	      
+      
+    </div>
+  </div><!-- /block-inner -->
+</div><!-- /block -->
+
+
+</div><!-- /footer-inner -->
+</div><!-- /footer -->
+</div><!-- /footer-wrapper -->
+      <!-- footer-message row: width = grid_width -->
+      <div id="footer-message-wrapper" class="footer-message-wrapper full-width">
+        <div id="footer-message" class="footer-message row grid16-16">
+          <div id="footer-message-inner" class="footer-message-inner inner clearfix">
+                      </div><!-- /footer-message-inner -->
+        </div><!-- /footer-message -->
+      </div><!-- /footer-message-wrapper -->
+    </div><!-- /page-inner -->
+  </div><!-- /page -->
+   <div id="lightboxAlt"><!-- + --></div>   	
+ <span class="mobile_banner"></span><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"246996499c","applicationID":"13964524","transactionName":"NQFVZRZRX0FRBxBZDgxLdlIQWV5cHzsWVRcLF15eCllfVW8SDVUW","queueTime":0,"applicationTime":494,"atts":"GUZWE15LTE8=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
